@@ -179,7 +179,7 @@ class Notification(models.Model):
     objects = NotificationQuerySet.as_manager()
 
     class Meta:
-        ordering = ('-timestamp', )
+        ordering = ('-id', ) # -id is better than -timestamp 
         app_label = 'notifications'
         index_together = [
             ["recipient", "unread"],
